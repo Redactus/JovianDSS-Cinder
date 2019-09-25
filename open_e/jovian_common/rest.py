@@ -565,8 +565,8 @@ class JovianRESTAPI(object):
 
         target_settings = resp['data']
 
-        target_settings['allow_ip'] = '192.168.0.0/16'
-        target_settings['deny_ip'] = '0.0.0.0/0'
+        target_settings['allow_ip'] = ["192.168.0.0/16"]
+        target_settings['deny_ip'] = ["0.0.0.0/0"]
 
         target_settings.pop('conflicted')
 
