@@ -545,6 +545,8 @@ class JovianRESTAPI(object):
         }
         :return: Throws JDSSRESTException if fails
         """
+
+
         path = self.api_path + '/pools/' + pool_name + \
             '/san/iscsi/targets/' + target_name
 
@@ -563,8 +565,8 @@ class JovianRESTAPI(object):
 
         target_settings = resp['data']
 
-        target_settings['allow_ip'] = settings['allow_ip']
-        target_settings['deny_ip'] = settings['deny_ip']
+        target_settings['allow_ip'] = '192.168.0.0/16'
+        target_settings['deny_ip'] = '0.0.0.0/0'
 
         target_settings.pop('conflicted')
 
